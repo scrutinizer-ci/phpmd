@@ -63,7 +63,7 @@
  */
 class PHP_PMD_Rule_Controversial_CamelCasePropertyName
        extends PHP_PMD_AbstractRule
-    implements PHP_PMD_RULE_IClassAware
+    implements PHP_PMD_Rule_IClassAware
 {
     /**
      * This method checks if a property is not named in camelCase

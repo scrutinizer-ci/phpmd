@@ -63,7 +63,7 @@
  */
 class PHP_PMD_Rule_Controversial_CamelCaseVariableName
        extends PHP_PMD_AbstractRule
-    implements PHP_PMD_RULE_IMethodAware
+    implements PHP_PMD_Rule_IMethodAware
 {
     /**
      * This method checks if a variable is not named in camelCase

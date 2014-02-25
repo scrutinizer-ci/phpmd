@@ -63,7 +63,7 @@
  */
 class PHP_PMD_Rule_Controversial_CamelCaseMethodName
        extends PHP_PMD_AbstractRule
-    implements PHP_PMD_RULE_IMethodAware
+    implements PHP_PMD_Rule_IMethodAware
 {
     protected $ignoredMethods = array(
         '__construct',
