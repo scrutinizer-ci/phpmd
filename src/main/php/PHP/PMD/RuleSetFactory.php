@@ -425,6 +425,12 @@ class PHP_PMD_RuleSetFactory
         $ruleSetRef = $ruleSetFactory->createSingleRuleSet($fileName);
         $rule       = $ruleSetRef->getRuleByName($ruleName);
 
+        if ( ! $rule instanceof PHP_PMD_Rule) {
+            $availableRules = array_map(function(PHP_PMD_Rule $rule) { return $rule->getName(); }, iterator_to_array($ruleSetRef->getRules()));
+
+            throw new \RuntimeException(sprintf('Could not find any rule named "%s", available rules: %s', $ruleName, implode(', ', $availableRules)));
+        }
+
         if (trim($ruleNode['name']) !== '') {
             $rule->setName((string) $ruleNode['name']);
         }
